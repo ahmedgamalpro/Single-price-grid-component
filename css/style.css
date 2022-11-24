@@ -1,0 +1,158 @@
+/* Colors */
+:root{
+    --cyan: hsl(179, 62%, 43%);
+    --down: hsl(181.71,28.46%,75.88%);
+    --bright-yellow: hsl(71, 73%, 54%);
+    --light-gray: hsl(204, 43%, 93%);
+    --grayish-blue: hsl(218, 22%, 67%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Karla', sans-serif;
+    overflow-x: hidden;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+}
+main{
+    width: 100vw;
+    height: 131vh;
+    background-color: var(--light-gray);
+    padding-top: 50px;
+}
+.card{
+    width: 360px;
+    height: 700px;
+    margin: 11px auto;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 1fr);
+    
+
+    
+}
+.top{
+    background-color: white;
+    
+}
+.card > div{
+    padding-left: 20px;
+}
+
+.top h1{
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: var(--cyan);
+    font-weight: 700;
+}
+.top h2{
+    font-size: 18px;
+    color: var(--bright-yellow);
+}
+.top p{
+    margin-top: 20px;
+    color: var(--grayish-blue);
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.med{
+    background-color: var(--cyan);
+}
+.med > h1{
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+.med .price{
+    display: grid;
+    grid-template-columns: 70px 100px;
+}
+
+.med .price h2{
+    font-size: 32px;
+    color: white;
+}
+
+.med .price p{
+    font-weight: 100;
+    font-size: 15px;
+    color: var(--light-gray);
+    text-align: center;
+    position: relative;
+    top: 7px;
+    left: -12px;
+}
+.med button{
+    position: relative;
+    bottom: -24px;
+    left: -2px;
+    padding: 20px 123px;
+    background-color: var(--bright-yellow);
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.med > p{
+    color: white;
+}
+
+.down{
+    background-color: var(--down);
+    color: white;
+}
+.down h1{
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.down p{
+    width: 202px;
+}
+br{
+    display: none;
+}
+
+
+
+@media(min-width:992px){
+    body{
+        overflow: hidden;
+    }
+    br{
+        display: block;
+    }
+    .card{
+        width: 800px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 40% 60%;
+        grid-template-areas: "top top" "med down";
+        height: 600px;
+    }
+    .top{
+        grid-area: top;
+    }
+    .med{
+        grid-area: med;
+    }
+    .med button{
+        bottom: -161px;
+        left: 20px;
+    }
+    .down{
+        grid-area: down;
+    }
+}
